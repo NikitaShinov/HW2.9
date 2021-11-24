@@ -14,7 +14,7 @@
 		B6AC6DE0274DA4630048C531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AC6DDE274DA4630048C531 /* Main.storyboard */; };
 		B6AC6DE2274DA4690048C531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6AC6DE1274DA4690048C531 /* Assets.xcassets */; };
 		B6AC6DE5274DA4690048C531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AC6DE3274DA4690048C531 /* LaunchScreen.storyboard */; };
-		B6AC6DED274E55450048C531 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6DEC274E55450048C531 /* Model.swift */; };
+		B6AC6DED274E55450048C531 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6DEC274E55450048C531 /* Animation.swift */; };
 		B6AC6DEF274E55570048C531 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC6DEE274E55570048C531 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		B6AC6DE1274DA4690048C531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6AC6DE4274DA4690048C531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6AC6DE6274DA4690048C531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6AC6DEC274E55450048C531 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B6AC6DEC274E55450048C531 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		B6AC6DEE274E55570048C531 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 		B6AC6DD7274DA4630048C531 /* HW2.9 */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC6DEC274E55450048C531 /* Model.swift */,
+				B6AC6DEC274E55450048C531 /* Animation.swift */,
 				B6AC6DEE274E55570048C531 /* DataManager.swift */,
 				B6AC6DD8274DA4630048C531 /* AppDelegate.swift */,
 				B6AC6DDA274DA4630048C531 /* SceneDelegate.swift */,
@@ -216,7 +216,7 @@
 				B6AC6DEF274E55570048C531 /* DataManager.swift in Sources */,
 				B6AC6DD9274DA4630048C531 /* AppDelegate.swift in Sources */,
 				B6AC6DDB274DA4630048C531 /* SceneDelegate.swift in Sources */,
-				B6AC6DED274E55450048C531 /* Model.swift in Sources */,
+				B6AC6DED274E55450048C531 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

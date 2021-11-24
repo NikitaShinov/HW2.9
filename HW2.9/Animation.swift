@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Animation.swift
 //  HW2.9
 //
 //  Created by Никита Шинов on 24.11.2021.
@@ -10,10 +10,10 @@ import Spring
 
 struct Animation {
     
-    var type: String
-    var curve: String
-    var force: CGFloat
-    var duration: CGFloat
+    let type: String
+    let curve: String
+    let force: Double
+    let duration: Double
     
     
     static func getRandomAnimation () -> [Animation] {
@@ -26,8 +26,8 @@ struct Animation {
         for index in 0..<types.count {
             let animation = Animation(type: types[index],
                                       curve: curves[index],
-                                      force: DataManager.sharedData.forces.randomElement()!,
-                                      duration: DataManager.sharedData.durations.randomElement()!)
+                                      force: CGFloat(Double.random(in: 0.4...1)),
+                                      duration: CGFloat(Double.random(in: 0.3...1)))
             listOfAnimations.append(animation)
         }
         return listOfAnimations

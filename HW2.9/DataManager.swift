@@ -38,6 +38,7 @@ class DataManager {
                  "squeezeRight",
                  "squeezeDown",
                  "squeezeUp"]
+    
     let curves = ["easeIn",
                   "easeOut",
                   "easeInOut",
@@ -67,6 +68,4 @@ class DataManager {
                   "easeInBack",
                   "easeOutBack",
                   "easeInOutBack"]
-    let forces: [CGFloat] = [1, 2, 3, 4, 5]
-    let durations: [CGFloat] = [1, 2, 3, 4, 5]
 }

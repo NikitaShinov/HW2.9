@@ -9,8 +9,8 @@ import Spring
 
 class ViewController: UIViewController {
     
-    let animations = Animation.getRandomAnimation()
-    var animationIndex = 0
+    private let animations = Animation.getRandomAnimation()
+    private var animationIndex = 0
 
 
     @IBOutlet var ball: SpringImageView!
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             if self.animationIndex < (self.animations.count - 1) {
                 self.animationIndex += 1
             } else {
-                self.animationIndex += 0
+                self.animationIndex = 0
             }
             self.getDescription()
         } )
@@ -38,8 +38,17 @@ class ViewController: UIViewController {
     }
     
     private func getDescription () {
-        let animationDefinition = "Type: \(animations[animationIndex].type)\nCurve:\(animations[animationIndex].curve)\nForce:\(animations[animationIndex].force)\nDuration:\(animations[animationIndex].duration)"
+        let animationDefinition = """
+\(animations[animationIndex].curve)
+\(animations[animationIndex].type)
+\(animations[animationIndex].force)
+\(animations[animationIndex].duration)
+"""
         animationDetails.text = animationDefinition
     }
-    
 }
+
+
+//"Type:\(animations[animationIndex].type)\nCurve:\(animations[animationIndex].curve)\nForce:\(animations[animationIndex].force)\nDuration:\(animations[animationIndex].duration)"
+//animationDetails.text = animationDefinition
+
