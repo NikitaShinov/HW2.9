@@ -6,49 +6,57 @@
 //
 
 import Spring
+import CoreGraphics
 
 class ViewController: UIViewController {
     
-    private let animations = Animation.getRandomAnimation()
-    private var animationIndex = 0
-
+    private var animation: Animation!
 
     @IBOutlet var ball: SpringImageView!
     @IBOutlet var animationDetails: SpringLabel!
     @IBOutlet var button: SpringButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getRandomAnimation()
+        getDescription()
+    }
+    
     @IBAction func buttonPressed(_ sender: SpringButton) {
         
-        button.setTitle(animations[animationIndex+1].type, for: .normal)
+        setAnimation()
+        getDescription()
+        getRandomAnimation()
+        button.setTitle("\(animation.type)", for: .normal)
         
-        ball.animation = animations[animationIndex].type
-        ball.curve = animations[animationIndex].curve
-        ball.force = animations[animationIndex].force
-        ball.duration = animations[animationIndex].duration
+    }
+    
+    private func getRandomAnimation () {
+        animation = Animation(type: Spring.AnimationPreset.allCases.randomElement()?.rawValue ?? "",
+                              curve: Spring.AnimationCurve.allCases.randomElement()?.rawValue ?? "",
+                              force: CGFloat(Double.random(in: 0...3)),
+                              duration: CGFloat(Double.random(in: 0...3)))
         
-        ball.animateNext(completion: {
-            if self.animationIndex < (self.animations.count - 1) {
-                self.animationIndex += 1
-            } else {
-                self.animationIndex = 0
-            }
-            self.getDescription()
-        } )
-
     }
     
     private func getDescription () {
-        let animationDefinition = """
-\(animations[animationIndex].curve)
-\(animations[animationIndex].type)
-\(animations[animationIndex].force)
-\(animations[animationIndex].duration)
-"""
+        let animationDefinition =
+                                """
+                                Curve: \(animation.curve)
+                                Name: \(animation.type)
+                                Force: \(animation.force)
+                                Duration: \(animation.duration)
+                                """
         animationDetails.text = animationDefinition
     }
+    
+    private func setAnimation () {
+        
+        ball.animation = animation.type
+        ball.curve = animation.curve
+        ball.force = animation.force
+        ball.duration = animation.duration
+        ball.animate()
+        
+    }
 }
-
-
-//"Type:\(animations[animationIndex].type)\nCurve:\(animations[animationIndex].curve)\nForce:\(animations[animationIndex].force)\nDuration:\(animations[animationIndex].duration)"
-//animationDetails.text = animationDefinition
-
