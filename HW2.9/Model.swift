@@ -22,14 +22,12 @@ struct Animation {
         
         let types = DataManager.sharedData.types.shuffled()
         let curves = DataManager.sharedData.curves.shuffled()
-        let forces = DataManager.sharedData.forces.shuffled()
-        let durations = DataManager.sharedData.durations.shuffled()
         
         for index in 0..<types.count {
             let animation = Animation(type: types[index],
                                       curve: curves[index],
-                                      force: forces.randomElement()!,
-                                      duration: durations.randomElement()!)
+                                      force: DataManager.sharedData.forces.randomElement()!,
+                                      duration: DataManager.sharedData.durations.randomElement()!)
             listOfAnimations.append(animation)
         }
         return listOfAnimations

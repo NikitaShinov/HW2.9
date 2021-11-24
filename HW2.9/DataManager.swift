@@ -67,7 +67,6 @@ class DataManager {
                   "easeInBack",
                   "easeOutBack",
                   "easeInOutBack"]
-    let forces: [CGFloat] = [1, 2, 3, 4]
-    let durations: [CGFloat] = [1, 2, 3, 4]
-//    ["slideLeft", "slideRight", "slideDown"]
+    let forces: [CGFloat] = [1, 2, 3, 4, 5]
+    let durations: [CGFloat] = [1, 2, 3, 4, 5]
 }
