@@ -5,15 +5,41 @@
 //  Created by Никита Шинов on 24.11.2021.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
+    
+    let animations = Animation.getRandomAnimation()
+    var animationIndex = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+    @IBOutlet var ball: SpringImageView!
+    @IBOutlet var animationDetails: SpringLabel!
+    @IBOutlet var button: SpringButton!
+    
+    @IBAction func buttonPressed(_ sender: SpringButton) {
+        
+        button.setTitle(animations[animationIndex+1].type, for: .normal)
+        
+        ball.animation = animations[animationIndex].type
+        ball.curve = animations[animationIndex].curve
+        ball.force = animations[animationIndex].force
+        ball.duration = animations[animationIndex].duration
+        
+        ball.animateNext(completion: {
+            if self.animationIndex < (self.animations.count - 1) {
+                self.animationIndex += 1
+            } else {
+                self.animationIndex += 0
+            }
+            self.getDescription()
+        } )
+
     }
-
-
+    
+    private func getDescription () {
+        let animationDefinition = "Type: \(animations[animationIndex].type)\nCurve:\(animations[animationIndex].curve)\nForce:\(animations[animationIndex].force)\nDuration:\(animations[animationIndex].duration)"
+        animationDetails.text = animationDefinition
+    }
+    
 }
-
